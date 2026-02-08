@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us and find answers">
+    <title>Feedback - Readify</title>
+    <link rel="icon" type="image/png" href="Images\favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">📚 Readify</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book-explorer.html">Book Explorer</a></li>
+                <li><a href="reading-tracker.html">Reading Tracker</a></li>
+                <li><a href="recommender.html">Recommender</a></li>
+                <li><a href="reading-flow.html">Reading Flow</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Feedback & Support</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Feedback Form -->
+    <section class="feedback-area">
+        <div class="container">
+            <div class="feedback-wrapper">
+                <div class="form-side">
+                    <h2>Send Feedback</h2>
+                    <form id="feedbackForm" class="feedback-form">
+                        <div class="form-field">
+                            <label>Name</label>
+                            <input type="text" id="userName" required>
+                            <span class="error" id="nameError"></span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label>Email</label>
+                            <input type="email" id="userEmail" required>
+                            <span class="error" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label>Subject</label>
+                            <select id="subject" required>
+                                <option value="">Select...</option>
+                                <option value="General">General Inquiry</option>
+                                <option value="Bug">Bug Report</option>
+                                <option value="Feature">Feature Request</option>
+                                <option value="Book">Book Suggestion</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="error" id="subjectError"></span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label>Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                            <span class="error" id="messageError"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+
+                    <div id="confirmBox" class="confirm-box" style="display:none;">
+                        <div class="confirm-icon">✅</div>
+                        <h3>Thank You!</h3>
+                        <p>Your message has been received</p>
+                        <button id="sendAnother" class="btn btn-secondary">Send Another</button>
+                    </div>
+                </div>
+
+                <div class="info-side">
+                    <h3>Contact Info</h3>
+                    <div class="contact-box">
+                        <p>📧 <strong>Email:</strong> support@readify.com</p>
+                        <p>⏰ <strong>Response:</strong> Within 24-48 hours</p>
+                        <p>💬 <strong>Community:</strong> Join our book club</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-area">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-btn">
+                        <span>How do I track my reading progress?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Go to the Reading Tracker page and enter your book details. The system will calculate your progress and estimate your finish date based on your reading speed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">
+                        <span>How does the book recommender work?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Select your preferred genre and book length, then click "Get Recommendation". The system will randomly suggest a book matching your preferences from our collection.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">
+                        <span>What are ambient sounds for?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>The Reading Flow page provides ambient sounds like rain, fireplace, and ocean waves to help create a perfect reading atmosphere. You can play multiple sounds and adjust their volumes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">
+                        <span>Is my data saved?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Yes! Your reading progress, book lists, completed books, and preferences are saved in your browser's local storage and persist between sessions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">
+                        <span>Can I suggest books?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Absolutely! Use the feedback form above and select "Book Suggestion" as the subject. We regularly update our collection based on user suggestions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">
+                        <span>How do I filter books?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>On the Book Explorer page, use the search box to find books by title or author, and the genre dropdown to filter by category. Click any book card to see detailed information.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">
+                        <span>Is Readify mobile-friendly?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Yes! Readify is fully responsive and works on all devices - phones, tablets, and computers. The site also supports Progressive Web App features for installation on your device.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Readify</h4>
+                    <p>Making reading accessible and enjoyable for everyone</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="book-explorer.html">Books</a></li>
+                        <li><a href="reading-tracker.html">Tracker</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="recommender.html">Recommender</a></li>
+                        <li><a href="reading-flow.html">Reading Flow</a></li>
+                        <li><a href="feedback.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Readify. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="feedback.js"></script>
+</body>
+</html>

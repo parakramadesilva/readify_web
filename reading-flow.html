@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reading atmosphere and book tracking">
+    <title>Reading Flow - Readify</title>
+    <link rel="icon" type="image/png" href="Images\favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">📚 Readify</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book-explorer.html">Book Explorer</a></li>
+                <li><a href="reading-tracker.html">Reading Tracker</a></li>
+                <li><a href="recommender.html">Recommender</a></li>
+                <li><a href="reading-flow.html" class="active">Reading Flow</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Reading Flow</h1>
+            <p>Create the perfect reading atmosphere</p>
+        </div>
+    </section>
+
+    <!-- Ambient Sounds -->
+    <section class="ambient-sounds">
+        <div class="container">
+            <h2>Ambient Sounds</h2>
+            <p class="section-desc">Choose sounds to enhance your reading</p>
+            
+            <div class="sounds-grid">
+                <div class="sound-item">
+                    <div class="sound-icon">🌧️</div>
+                    <h3>Rain</h3>
+                    <button class="sound-btn" data-sound="rain">
+                        <span class="play">▶️ Play</span>
+                        <span class="pause" style="display:none">⏸️ Pause</span>
+                    </button>
+                    <input type="range" class="volume" data-sound="rain" min="0" max="100" value="50">
+                </div>
+
+                <div class="sound-item">
+                    <div class="sound-icon">🔥</div>
+                    <h3>Fireplace</h3>
+                    <button class="sound-btn" data-sound="fire">
+                        <span class="play">▶️ Play</span>
+                        <span class="pause" style="display:none">⏸️ Pause</span>
+                    </button>
+                    <input type="range" class="volume" data-sound="fire" min="0" max="100" value="50">
+                </div>
+
+                <div class="sound-item">
+                    <div class="sound-icon">🍃</div>
+                    <h3>Forest</h3>
+                    <button class="sound-btn" data-sound="forest">
+                        <span class="play">▶️ Play</span>
+                        <span class="pause" style="display:none">⏸️ Pause</span>
+                    </button>
+                    <input type="range" class="volume" data-sound="forest" min="0" max="100" value="50">
+                </div>
+
+                <div class="sound-item">
+                    <div class="sound-icon">🌊</div>
+                    <h3>Ocean</h3>
+                    <button class="sound-btn" data-sound="ocean">
+                        <span class="play">▶️ Play</span>
+                        <span class="pause" style="display:none">⏸️ Pause</span>
+                    </button>
+                    <input type="range" class="volume" data-sound="ocean" min="0" max="100" value="50">
+                </div>
+
+                <div class="sound-item">
+                    <div class="sound-icon">⛈️</div>
+                    <h3>Thunder</h3>
+                    <button class="sound-btn" data-sound="thunder">
+                        <span class="play">▶️ Play</span>
+                        <span class="pause" style="display:none">⏸️ Pause</span>
+                    </button>
+                    <input type="range" class="volume" data-sound="thunder" min="0" max="100" value="50">
+                </div>
+            </div>
+
+            <button id="stopAll" class="btn btn-secondary">Stop All Sounds</button>
+        </div>
+    </section>
+
+    <!-- Completed Books -->
+    <section class="completed-books">
+        <div class="container">
+            <h2>Completed Books</h2>
+            <p class="section-desc">Track books you've finished</p>
+            
+            <form id="completedForm" class="completed-form">
+                <input type="text" id="compTitle" placeholder="Book Title" required>
+                <input type="text" id="compAuthor" placeholder="Author" required>
+                <input type="date" id="compDate" required>
+                <button type="submit" class="btn btn-primary">Add Book</button>
+            </form>
+
+            <div id="completedList" class="completed-list">
+                <p class="empty-msg">No completed books yet</p>
+            </div>
+
+            <div id="readingStats" class="reading-stats" style="display:none;">
+                <h3>Your Stats</h3>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-num" id="totalBooks">0</div>
+                        <div class="stat-text">Total Books</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num" id="thisMonth">0</div>
+                        <div class="stat-text">This Month</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num" id="thisYear">0</div>
+                        <div class="stat-text">This Year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Readify</h4>
+                    <p>Making reading accessible and enjoyable for everyone</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="book-explorer.html">Books</a></li>
+                        <li><a href="reading-tracker.html">Tracker</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="recommender.html">Recommender</a></li>
+                        <li><a href="reading-flow.html">Reading Flow</a></li>
+                        <li><a href="feedback.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Readify. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="flow.js"></script>
+</body>
+</html>
