@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Browse and discover books">
     <title>Book Explorer - Readify</title>
-    <link rel="icon" type="image/png" href="Images\favicon.png">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+
+    <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">📚 Readify</div>
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="book-explorer.html" class="active">Book Explorer</a></li>
@@ -24,7 +34,8 @@
                 <li><a href="reading-flow.html">Reading Flow</a></li>
                 <li><a href="feedback.html">Feedback</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
+
+            <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -44,7 +55,16 @@
     <section class="search-filter">
         <div class="container">
             <div class="filter-controls">
-                <input type="text" id="searchInput" placeholder="Search by title or author..." class="search-input">
+
+                <label for="searchInput" class="visually-hidden">Search books</label>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by title or author..."
+                    class="search-input"
+                >
+
+                <label for="genreFilter" class="visually-hidden">Filter by genre</label>
                 <select id="genreFilter" class="genre-select">
                     <option value="all">All Genres</option>
                     <option value="Fiction">Fiction</option>
@@ -56,6 +76,7 @@
                     <option value="Thriller">Thriller</option>
                     <option value="Classic">Classic</option>
                 </select>
+
             </div>
         </div>
     </section>
@@ -64,31 +85,42 @@
     <section class="books-area">
         <div class="container">
             <div id="booksGrid" class="books-grid"></div>
-            <p id="noResults" class="no-books" style="display:none;">No books found</p>
+            <p id="noResults" class="no-books" hidden>No books found</p>
         </div>
     </section>
 
     <!-- Book Modal -->
-    <div id="bookModal" class="modal">
+    <div id="bookModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-box">
-            <span class="modal-close" id="modalClose">&times;</span>
+
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+
             <div class="modal-grid">
+
                 <div class="modal-left">
-                    <img id="modalCover" class="book-cover-big" alt="Book cover"> </div>
+                    <img id="modalCover" class="book-cover-big" alt="Book cover">
+                </div>
+
                 <div class="modal-right">
                     <h2 id="modalTitle"></h2>
-                    <p class="book-meta"><strong>Author:</strong> <span id="modalAuthor"></span></p>
-                    <p class="book-meta"><strong>Genre:</strong> <span id="modalGenre"></span></p>
-                    
+
+                    <p class="book-meta">
+                        <strong>Author:</strong> <span id="modalAuthor"></span>
+                    </p>
+
+                    <p class="book-meta">
+                        <strong>Genre:</strong> <span id="modalGenre"></span>
+                    </p>
+
                     <h3>Synopsis</h3>
                     <p id="modalSynopsis"></p>
-                    
-                    <div id="seriesSection" style="display:none;">
+
+                    <div id="seriesSection" hidden>
                         <h3>Series</h3>
                         <div id="seriesContent"></div>
                     </div>
-                    
-                    <h3>Ratings & Reviews</h3>
+
+                    <h3>Ratings &amp; Reviews</h3>
                     <table class="ratings-table">
                         <thead>
                             <tr>
@@ -100,6 +132,7 @@
                         <tbody id="ratingsBody"></tbody>
                     </table>
                 </div>
+
             </div>
         </div>
     </div>
@@ -107,11 +140,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+
             <div class="footer-grid">
+
                 <div class="footer-col">
                     <h4>Readify</h4>
                     <p>Making reading accessible and enjoyable for everyone</p>
                 </div>
+
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
@@ -120,6 +156,7 @@
                         <li><a href="reading-tracker.html">Tracker</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
                     <h4>Tools</h4>
                     <ul>
@@ -128,15 +165,20 @@
                         <li><a href="feedback.html">Contact</a></li>
                     </ul>
                 </div>
+
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Readify. All rights reserved.</p>
             </div>
+
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="common.js"></script>
     <script src="books.js"></script>
     <script src="explorer.js"></script>
+
 </body>
 </html>
