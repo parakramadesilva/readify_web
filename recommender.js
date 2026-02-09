@@ -3,9 +3,9 @@
 let currentRec = null;
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('getRecommendation').addEventListener('click', recommend);
-    document.getElementById('pickAgain').addEventListener('click', recommend);
-    document.getElementById('saveToList').addEventListener('click', addToList);
+    document.getElementById('getRecommendation')?.addEventListener('click', recommend);
+    document.getElementById('pickAgain')?.addEventListener('click', recommend);
+    document.getElementById('saveToList')?.addEventListener('click', addToList);
     loadList();
 });
 
@@ -37,10 +37,8 @@ function recommend() {
     document.getElementById('recGenre').textContent = random.genre;
     document.getElementById('recPages').textContent = random.pages;
     document.getElementById('recSynopsis').textContent = random.synopsis;
-
     document.getElementById('recCover').src = random.image;
 
-    
     document.getElementById('recommendResult').style.display = 'block';
     document.getElementById('saveListMsg').textContent = '';
 }
